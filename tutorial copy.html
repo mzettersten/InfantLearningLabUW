@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My experiment</title>
+        <script src="jspsych-6/jspsych.js"></script>
+        <script src="jspsych-6/plugins/jspsych-html-keyboard-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-image-keyboard-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-audio-keyboard-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
+        <link href="jspsych-6/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    </head>
+    <body></body>
+    <script>
+
+
+
+    /* create timeline */
+    var timeline = [];
+    var audio = ['audio/apple.wav'];
+    var images = ['img/3_apple.jpg', 'img/1_ball.jpg', 'img/novel1.jpg', 'img/novel2.jpg']
+    /* define welcome message trial */
+    var welcome = {
+        type: "html-keyboard-response",
+        stimulus: "<b>Welcome to test page</b>"
+    };
+    timeline.push(welcome);
+    alert('Test begins');
+
+    // Sound Testing
+    var pre_audio = {
+      type: 'html-button-response',
+      stimulus: 'The next page contains audio testing.',
+      choices: ["img/novel1.jpg"]
+    }
+    timeline.push(pre_audio);
+
+    var sound_trial_apple_1 = {
+      type: 'audio-keyboard-response',
+      stimulus: 'audio/apple.wav',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 5000,
+      prompt: "<div style='width: 900px;'>"+
+      "<div style='float: left;'> <img src= 'img/3_apple.jpg' title = '123' width='370' height='300'></img>" +
+      "<p class='small'><strong>Press the F key</strong> for selecting <strong>APPLE</strong></p></div>" +
+
+      "<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='370' height='300'></img>" +
+      "<p class='small'><strong>Press the J key</strong> for selecting <strong>BALL</strong></p></div>" +
+      "</div>"+
+      "<p>Which one did you hear? (F or J)</p>"
+
+
+      //'<div style="width: 300px; height: 300px; background-color: #0000ff;"></div><p>Does the color match the word? (Y or N)</p>'
+    }
+    timeline.push(sound_trial_apple_1);
+
+    var sound_trial_apple_2 = {
+      type: "image-button-response",
+      stimulus:'',
+      choices: ['<img src="img/3_apple.jpg" alt="Submit">', '<img src="img/1_ball.jpg" alt="Submit">'],
+      prompt: "<div style='width: 900px;'>"+
+          "<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
+          "<p class='small'><strong>Press the F key</strong> for selecting <strong>APPLE</strong></p></div>" +
+
+          "<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
+          "<p class='small'><strong>Press the J key</strong> for selecting <strong>BALL</strong></p></div>" +
+          "</div>"+
+          "<p>Which one did you hear? (F or J)</p>",
+
+    };
+    timeline.push(sound_trial_apple_2);
+
+
+
+
+
+
+
+
+
+
+    var pre_audio_2 = {
+      type: 'html-button-response',
+      stimulus: 'Audio testing for football & cookie.',
+      choices: ['Continue']
+    }
+    timeline.push(pre_audio);
+
+    var sound_trial_ball_1 = {
+      type: 'audio-keyboard-response',
+      stimulus: 'audio/ball.wav',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 5000,
+      prompt: "<div style='width: 900px;'>"+
+      "<div style='float: left;'><img src='img/1_cookie.jpg' title = '133' width='375' height='300'></img>" +
+      "<p class='small'><strong>Press the F key</strong> for selecting <strong>COOKIE</strong></p></div>" +
+
+      "<div class='float: right;'><img src='img/1_ball.jpg' title = '143' width='375' height='300'></img>" +
+      "<p class='small'><strong>Press the J key</strong> for selecting <strong>BALL</strong></p></div>" +
+      "</div>"+
+      "<p>Which one did you hear? (F or J)</p>"
+
+
+      //'<div style="width: 300px; height: 300px; background-color: #0000ff;"></div><p>Does the color match the word? (Y or N)</p>'
+    }
+    timeline.push(sound_trial_ball_1);
+
+    var sound_trial_ball_2 = {
+      type: "html-keyboard-response",
+      stimulus:'',
+      choices: ['f', 'j'],
+      prompt: "<div style='width: 900px;'>"+
+          "<div style='float: left;'><img src='img/1_cookie.jpg' title = '133' width='375' height='300'></img>" +
+          "<p class='small'><strong>Press the F key</strong> for selecting <strong>COOKIE</strong></p></div>" +
+
+          "<div class='float: right;'><img src='img/1_ball.jpg' title = '143' width='375' height='300'></img>" +
+          "<p class='small'><strong>Press the J key</strong> for selecting <strong>BALL</strong></p></div>" +
+          "</div>"+
+          "<p>Which one did you hear? (F or J)</p>",
+
+    };
+    timeline.push(sound_trial_ball_2);
+
+
+    var pre_audio_3 = {
+      type: 'html-button-response',
+      stimulus: 'Audio testing for logas.',
+      choices: ['img/novel1.jpg']
+    }
+
+    var sound_trial_loga_1 = {
+      type: 'audio-keyboard-response',
+      stimulus: 'audio/loga.wav',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 5000,
+      prompt: "<div style='width: 900px;'>"+
+      "<div style='float: left;'><img src='img/novel1.jpg' title = '223' width='375' height='300'></img>" +
+      "<p class='small'><strong>Press the F key</strong> for selecting <strong>LOGA 1</strong></p></div>" +
+
+      "<div class='float: right;'><img src='img/novel2.jpg' title = '323' width='375' height='300'></img>" +
+      "<p class='small'><strong>Press the J key</strong> for selecting <strong>OTHER</strong></p></div>" +
+      "</div>"+
+      "<p>Which one did you hear? (F or J)</p>"
+    }
+    timeline.push(sound_trial_loga_1)
+
+    var sound_trial_loga_2 = {
+      type: "html-keyboard-response",
+      stimulus:'',
+      choices: ['f', 'j'],
+      prompt: "<div style='width: 900px;'>"+
+          "<div style='float: left;'><img src='img/novel1.jpg'title = '223' width='375' height='300'></img>" +
+          "<p class='small'><strong>Press the F key</strong> for selecting <strong>LOGA 1</strong></p></div>" +
+
+          "<div class='float: right;'><img src='img/novel2.jpg'title = '323' width='375' height='300'></img>" +
+          "<p class='small'><strong>Press the J key</strong> for selecting <strong>OTHER</strong></p></div>" +
+          "</div>"+
+          "<p>Which one did you hear? (F or J)</p>",
+
+    };
+    timeline.push(sound_trial_loga_2);
+
+    var debrief_block = {
+       type: "html-keyboard-response",
+       stimulus: function() {
+
+         var trials = jsPsych.data.get().filter({test_part: 'test'});
+         var correct_trials = trials.filter({correct: true});
+         var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+         var rt = Math.round(correct_trials.select('rt').mean());
+
+         return "<p>You responded correctly on "+accuracy+"% of the trials.</p>"+
+         "<p>Your average response time was "+rt+"ms.</p>"+
+         "<p>Press any key to complete the experiment. Thank you!</p>";
+
+       }
+     };
+     timeline.push(debrief_block);
+
+    var test_end = {
+        type: "html-keyboard-response",
+        stimulus: "<b>The test is finished. Press any key to quit</b>"
+    };
+    timeline.push(test_end);
+
+
+    /* start the experiment */
+    jsPsych.init({
+      // preload_audio: audio,
+      // preload_images: images,
+      //timeline: timeline,
+      preload_audio: audio,
+      preload_images: images,
+      //timeline: timeline
+      timeline: [welcome, pre_audio, sound_trial_apple_1, sound_trial_apple_2, pre_audio_2, sound_trial_ball_1, sound_trial_ball_2, pre_audio_3, sound_trial_loga_1, sound_trial_loga_2, debrief_block, test_end],
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+      // show_preload_progress_bar: false // hide preload progress bar
+
+    });
+
+
+    </script>
+
+</html>
