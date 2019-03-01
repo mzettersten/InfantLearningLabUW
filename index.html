@@ -8,6 +8,8 @@
         <script src="jspsych-6/plugins/jspsych-image-keyboard-response.js"></script>
         <script src="jspsych-6/plugins/jspsych-audio-keyboard-response.js"></script>
         <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-audio-button-response.js"></script>
+
         <link href="jspsych-6/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     </head>
     <body></body>
@@ -36,41 +38,57 @@
     timeline.push(pre_audio);
 
     var sound_trial_apple_1 = {
-      type: 'audio-keyboard-response',
+      type: 'audio-button-response',
       stimulus: 'audio/apple.wav',
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 5000,
-      prompt: "<div style='width: 900px;'>"+
-      "<div style='float: left;'> <img src= 'img/3_apple.jpg' title = '123' width='370' height='300'></img>" +
-      "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>APPLE</strong></p></div>" +
+      //choices: ['<img src="img/3_apple.jpg" alt="Submit">', '<img src="img/1_ball.jpg" alt="Submit">'],
+      choices: ['<img src="img/3_apple.jpg" title = "133" width="375" height="300" alt="Submit">', '<img src="img/1_ball.jpg" title = "133" width="375" height="300" alt="Submit">'],
 
-      "<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='370' height='300'></img>" +
-      "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
-      "</div>"+
-      "<p>Which one did you hear? (APPLE or BALL)</p>"
+      //<img src='img/1_cookie.jpg' title = '133' width='375' height='300'>
+      prompt:  ''
 
-
-      //'<div style="width: 300px; height: 300px; background-color: #0000ff;"></div><p>Does the color match the word? (Y or N)</p>'
     }
     timeline.push(sound_trial_apple_1);
+      // type: 'audio-button-response',
+      // stimulus: 'audio/apple.wav',
+      // choices: ['Blue', 'Red'],
+      // trial_duration: 5000,
+      // prompt: ""
+      // "<div style='float: bottom;'> <img src= 'img/3_apple.jpg' title = '123' width='370' height='300'></img>" +
+      // "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>APPLE</strong></p></div>" +
+      //
+      // "<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='370' height='300'></img>" +
+      // "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
+      // "</div>"+
+      // "<p>Which one did you hear? (APPLE or BALL)</p>"
 
-    var sound_trial_apple_2 = {
-      type: "html-button-response",
-      stimulus:'',
-      choices: ['<img src="img/3_apple.jpg" alt="Submit">', '<img src="img/1_ball.jpg" alt="Submit">'],
-      prompt:
-          //"<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
-          "<div style='float: left;'>" +
-          "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>APPLE</strong></p></div>" +
-          //<div style='width: 700px;'>"+
-          //"<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
-          "<div style='float: right;'>" +
-          "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
-          "</div>"+
-          "<p>Which one did you hear? (LEFT or right)</p>",
+      // <div id="background-img" class="background-img" ></div>
+      //
+      // .background-img{
+      //     background:url('images/bg-img.png');
+      //     width:100%;
+      //     height:698px;
+      //     repeat-x;
+      // }
+      //'<div style="width: 300px; height: 300px; background-color: #0000ff;"></div><p>Does the color match the word? (Y or N)</p>'
 
-    };
-    timeline.push(sound_trial_apple_2);
+
+    // var sound_trial_apple_2 = {
+    //   type: "html-button-response",
+    //   stimulus:'',
+    //   choices: ['<img src="img/3_apple.jpg" alt="Submit">', '<img src="img/1_ball.jpg" alt="Submit">'],
+    //   prompt:
+    //       //"<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
+    //       "<div style='float: left;'>" +
+    //       "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>APPLE</strong></p></div>" +
+    //       //<div style='width: 700px;'>"+
+    //       //"<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
+    //       "<div style='float: right;'>" +
+    //       "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
+    //       "</div>"+
+    //       "<p>Which one did you hear? (LEFT or right)</p>",
+    //
+    // };
+    // timeline.push(sound_trial_apple_2);
 
 
 
@@ -89,53 +107,44 @@
     timeline.push(pre_audio);
 
     var sound_trial_ball_1 = {
-      type: 'audio-keyboard-response',
+      type: 'audio-button-response',
       stimulus: 'audio/ball.wav',
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 5000,
-      prompt: "<div style='width: 900px;'>"+
-      "<div style='float: left;'><img src='img/1_cookie.jpg' title = '133' width='375' height='300'></img>" +
-      "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>COOKIE</strong></p></div>" +
-
-      "<div class='float: right;'><img src='img/1_ball.jpg' title = '143' width='375' height='300'></img>" +
-      "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
-      "</div>"+
-      "<p>Which one did you hear? (COOKIE or BALL)</p>"
-
+      choices: ['<img src="img/1_cookie.jpg" title = "133" width="375" height="300" alt="Submit">', '<img src="img/1_ball.jpg" title = "133" width="375" height="300" alt="Submit">'],
+      prompt:   ''
 
       //'<div style="width: 300px; height: 300px; background-color: #0000ff;"></div><p>Does the color match the word? (Y or N)</p>'
     }
     timeline.push(sound_trial_ball_1);
 
-    var sound_trial_ball_2 = {
-      // type: "html-keyboard-response",
-      // stimulus:'',
-      // choices: ['f', 'j'],
-      // prompt: "<div style='width: 900px;'>"+
-      //     "<div style='float: left;'><img src='img/1_cookie.jpg' title = '133' width='375' height='300'></img>" +
-      //     "<p class='small'><strong>Press the F key</strong> for selecting <strong>COOKIE</strong></p></div>" +
-      //
-      //     "<div class='float: right;'><img src='img/1_ball.jpg' title = '143' width='375' height='300'></img>" +
-      //     "<p class='small'><strong>Press the J key</strong> for selecting <strong>BALL</strong></p></div>" +
-      //     "</div>"+
-      //     "<p>Which one did you hear? (F or J)</p>",
-
-          type: "html-button-response",
-          stimulus:'',
-          choices: ['<img src="img/1_cookie.jpg" alt="Submit">', '<img src="img/1_ball.jpg" alt="Submit">'],
-          prompt:
-              //"<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
-              "<div style='float: left;'>" +
-              "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>COOKIE</strong></p></div>" +
-              //<div style='width: 700px;'>"+
-              //"<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
-              "<div style='float: right;'>" +
-              "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
-              "</div>"+
-              "<p>Which one did you hear? (LEFT or right)</p>",
-
-    };
-    timeline.push(sound_trial_ball_2);
+    // var sound_trial_ball_2 = {
+    //   // type: "html-keyboard-response",
+    //   // stimulus:'',
+    //   // choices: ['f', 'j'],
+    //   // prompt: "<div style='width: 900px;'>"+
+    //   //     "<div style='float: left;'><img src='img/1_cookie.jpg' title = '133' width='375' height='300'></img>" +
+    //   //     "<p class='small'><strong>Press the F key</strong> for selecting <strong>COOKIE</strong></p></div>" +
+    //   //
+    //   //     "<div class='float: right;'><img src='img/1_ball.jpg' title = '143' width='375' height='300'></img>" +
+    //   //     "<p class='small'><strong>Press the J key</strong> for selecting <strong>BALL</strong></p></div>" +
+    //   //     "</div>"+
+    //   //     "<p>Which one did you hear? (F or J)</p>",
+    //
+    //       type: "html-button-response",
+    //       stimulus:'',
+    //       choices: ['<img src="img/1_cookie.jpg" alt="Submit">', '<img src="img/1_ball.jpg" alt="Submit">'],
+    //       prompt:
+    //           //"<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
+    //           "<div style='float: left;'>" +
+    //           "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>COOKIE</strong></p></div>" +
+    //           //<div style='width: 700px;'>"+
+    //           //"<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
+    //           "<div style='float: right;'>" +
+    //           "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>BALL</strong></p></div>" +
+    //           "</div>"+
+    //           "<p>Which one did you hear? (LEFT or right)</p>",
+    //
+    // };
+    // timeline.push(sound_trial_ball_2);
 
 
     var pre_audio_3 = {
@@ -145,52 +154,44 @@
     }
 
     var sound_trial_loga_1 = {
-      type: 'audio-keyboard-response',
+      type: 'audio-button-response',
       stimulus: 'audio/loga.wav',
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 5000,
-      prompt: "<div style='width: 900px;'>"+
-      "<div style='float: left;'><img src='img/novel1.jpg' title = '223' width='375' height='300'></img>" +
-      "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>NOV 1</strong></p></div>" +
-
-      "<div class='float: right;'><img src='img/novel2.jpg' title = '323' width='375' height='300'></img>" +
-      "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>OTHER</strong></p></div>" +
-      "</div>"+
-      "<p>Which one did you hear? (LOGA or OTHER)</p>"
+      choices: ['<img src="img/novel1.jpg" title = "133" width="375" height="300" alt="Submit">', '<img src="img/novel2.jpg" title = "133" width="375" height="300" alt="Submit">'],
+      prompt:   ""
     }
     timeline.push(sound_trial_loga_1)
 
-    var sound_trial_loga_2 = {
-      // type: "html-keyboard-response",
-      // stimulus:'',
-      // choices: ['f', 'j'],
-      // prompt: "<div style='width: 900px;'>"+
-      //     "<div style='float: left;'><img src='img/novel1.jpg'title = '223' width='375' height='300'></img>" +
-      //     "<p class='small'><strong>Press the F key</strong> for selecting <strong>LOGA 1</strong></p></div>" +
-      //
-      //     "<div class='float: right;'><img src='img/novel2.jpg'title = '323' width='375' height='300'></img>" +
-      //     "<p class='small'><strong>Press the J key</strong> for selecting <strong>OTHER</strong></p></div>" +
-      //     "</div>"+
-      //     "<p>Which one did you hear? (F or J)</p>",
-
-          type: "html-button-response",
-          stimulus:'',
-          choices: ['<img src="img/novel1.jpg" alt="Submit">', '<img src="img/novel2.jpg" alt="Submit">'],
-          prompt:
-              //"<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
-              "<div style='float: left;'>" +
-              "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>NOVEL 1</strong></p></div>" +
-              //<div style='width: 700px;'>"+
-              //"<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
-              "<div style='float: right;'>" +
-              "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>NOVEL 2</strong></p></div>" +
-              "</div>"+
-              "<p>Which one did you hear? (LEFT or right)</p>",
-
-
-
-    };
-    timeline.push(sound_trial_loga_2);
+    // var sound_trial_loga_2 = {
+    //   // type: "html-keyboard-response",
+    //   // stimulus:'',
+    //   // choices: ['f', 'j'],
+    //   // prompt: "<div style='width: 900px;'>"+
+    //   //     "<div style='float: left;'><img src='img/novel1.jpg'title = '223' width='375' height='300'></img>" +
+    //   //     "<p class='small'><strong>Press the F key</strong> for selecting <strong>LOGA 1</strong></p></div>" +
+    //   //
+    //   //     "<div class='float: right;'><img src='img/novel2.jpg'title = '323' width='375' height='300'></img>" +
+    //   //     "<p class='small'><strong>Press the J key</strong> for selecting <strong>OTHER</strong></p></div>" +
+    //   //     "</div>"+
+    //   //     "<p>Which one did you hear? (F or J)</p>",
+    //
+    //       type: "html-button-response",
+    //       stimulus:'',
+    //       choices: ['<img src="img/novel1.jpg" alt="Submit">', '<img src="img/novel2.jpg" alt="Submit">'],
+    //       prompt:
+    //           //"<div style='float: left;'><img src='img/3_apple.jpg' title = '123' width='375' height='300'></img>" +
+    //           "<div style='float: left;'>" +
+    //           "<p class='small'>Press the <strong>LEFT IMAGE</strong> for selecting <strong>NOVEL 1</strong></p></div>" +
+    //           //<div style='width: 700px;'>"+
+    //           //"<div class='float: right;'><img src='img/1_ball.jpg' title = '124' width='375' height='300'></img>" +
+    //           "<div style='float: right;'>" +
+    //           "<p class='small'>Press the <strong>RIGHT IMAGE</strong> for selecting <strong>NOVEL 2</strong></p></div>" +
+    //           "</div>"+
+    //           "<p>Which one did you hear? (LEFT or right)</p>",
+    //
+    //
+    //
+    // };
+    // timeline.push(sound_trial_loga_2);
 
     var debrief_block = {
        type: "html-keyboard-response",
@@ -224,7 +225,7 @@
       preload_audio: audio,
       preload_images: images,
       //timeline: timeline
-      timeline: [welcome, pre_audio, sound_trial_apple_1, sound_trial_apple_2, pre_audio_2, sound_trial_ball_1, sound_trial_ball_2, pre_audio_3, sound_trial_loga_1, sound_trial_loga_2, debrief_block, test_end],
+      timeline: [welcome, pre_audio, sound_trial_apple_1, pre_audio_2, sound_trial_ball_1, pre_audio_3, sound_trial_loga_1, debrief_block, test_end],
       on_finish: function() {
         jsPsych.data.displayData();
       }
