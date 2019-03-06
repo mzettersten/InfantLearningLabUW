@@ -65,13 +65,13 @@ jsPsych.plugins["audio-button-response-flexiblelocations"] = (function() {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Margin right',
         default: '0px',
-        description: 'Top margin of button.'
+        description: 'Right margin of button.'
       },
       margin_left: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Margin left',
         default: '8px',
-        description: 'Horizontal margin of button.'
+        description: 'Left margin of button.'
       },
       response_ends_trial: {
         type: jsPsych.plugins.parameterType.BOOL,
